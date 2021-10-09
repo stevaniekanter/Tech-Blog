@@ -9,11 +9,11 @@
 
 # Description
 
-In this assignment, I have created a an interdace that allows non-developers to easily view and interact with information stored in databases. This is a command-line application to help manage a company's employee database, using Node.js, Inquirer, and MySQL.
+In this assignment, I have created a CMS-style blog site that user can use to publish blog posts and comments on other post as well. 
 
 # Demonstration
 
-* [Video Walkthrough](https://drive.google.com/file/d/1XkwoHXVDwQByAKrvmB9b6-3Vv-zbQeDU/view?usp=sharing)
+* [Video Walkthrough]()
 
 * [Github Repository](https://github.com/stevaniekanter/Tech-Blog)
 
@@ -30,4 +30,6 @@ npm start
 Javascript
 Node
 mySQL
+Sequelize
+Handlebars
 ```
