@@ -1,0 +1,43 @@
+<div class="row p-5">
+  <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <a
+            href="/post/{{id}}"
+            class="text-reset text-decoration-none"
+          >{{postInfo.title}} </a>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{postInfo.content}}</p>
+        </div>
+      </div>
+      <div>&nbsp;</div>
+
+    {{#each comments as |comment|}}
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">{{comment.comment}}</p>
+          <p class="card-text">-{{comment.user.username}}, {{format_date posted_date}}</p>
+        </div>
+      </div>
+      <div>&nbsp;</div>
+    {{/each}}
+      <div class="card">
+        <div class="card-header">&nbsp;</div>
+        <div class="card-body">
+            <form   id="comment-form"> 
+                <input type="hidden" value="{{ postInfo.id }}" id="postId">
+                <p class="card-text">Comment</p>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+                <br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-block btn-primary custom-background-color capitalize">Submit</button>
+                </div>
+            </form>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<script src="/assets/js/addComment.js"></script>
