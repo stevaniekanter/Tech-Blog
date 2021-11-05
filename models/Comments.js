@@ -18,7 +18,7 @@ Comments.init(
     posted_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: sequelize.fn('NOW')
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
