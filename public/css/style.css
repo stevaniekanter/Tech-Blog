@@ -9,12 +9,12 @@
   font-family: var(--font-family);
 }
 
-body {
-  background-color: var(--backgorundcolor);
-}
-
 .custom-text-color {
   color: var(--color)
+}
+
+body {
+  background-color: var(--backgorundcolor);
 }
 
 .custom-background-color {
@@ -22,15 +22,6 @@ body {
   background-color: var(--color)
 }
 
-.uvIndex {
-  padding: 8px;
-  border-radius: 10px;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.size13 {
+.size {
   font-size: 13px;
 }
