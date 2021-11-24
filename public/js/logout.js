@@ -7,8 +7,10 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/login');
   } else {
-    alert('Failed logging out');
+    alert('Sorry, failed logging out');
   }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+document
+  .querySelector('#logout')
+  .addEventListener('click', logout);

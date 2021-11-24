@@ -1,24 +1,36 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root {
+  --background: rgb(228, 205, 205);
+  --backgorundcolor: #d1afaf;
+  --color: #4428ac;
+  --font-family: sans-serif;
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+* {
+  font-family: var(--font-family);
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+body {
+  background-color: var(--backgorundcolor);
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.custom-text-color {
+  color: var(--color)
+}
+
+.custom-background-color {
+  color: var(--background);
+  background-color: var(--color)
+}
+
+.uvIndex {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.size13 {
+  font-size: 13px;
 }
