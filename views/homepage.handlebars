@@ -1,33 +1,19 @@
-{{#each posts as |post| }}
-<div class="row mb-4 post">
-  <div class="col-md-5">
-    <h2>
-      <a href="/posts/{{id}}">{{title}}</a>
-    </h2>
-    <p>posted by: {{user.username}} on {{format_date date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{post_body}}
-    </p>
-      
-      {{!-- commenting on posts --}}
-      {{#if comments.length}}
-        {{#each comment as |comment|}}
-        <p class="comments">
-          {{text}}
-        </p>
-        <p>: {{user_id}}</p>
-        {{/each}}
-      {{/if}}
-      {{#if logged_in}}
-        <form>
-          <label for='Comments'></label>
-          <textarea class="form-input" id="leaveComment" name="leaveComment"></textarea>
-          <button type='submit' id='submitComment'>Comment</button>
-        </form>
-      {{/if}}
-
+<div class="row p-5">
+  <div class="col-sm-12">
+    {{#each posts as |post|}}
+      <div class="card">
+        <div class="card-header custom-text-color">
+          <a
+            href="/post/{{id}}"
+            class="text-reset text-decoration-none"
+          >{{title}} </a>
+          <span style="float: right;">Posted by {{user.username}} on {{format_date  created_date}}</span>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{content}}</p>
+        </div>
+      </div>
+      <div>&nbsp;</div>
+    {{/each}}
   </div>
 </div>
-{{/each}}

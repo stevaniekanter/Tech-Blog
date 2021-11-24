@@ -1,0 +1,28 @@
+<div class="row p-5">
+  <div class="col-sm-12">
+    <form id="addPost">
+      <h2 class="custom-text-color">Create New Post</h2>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          aria-describedby="titleHelp"
+        />
+        <div id="titleHelp" class="form-text">Create a post</div>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea class="form-control" id="content" rows="3"></textarea>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary custom-background-color capitalize">Create</button>      
+      </div>
+      
+    </form>
+  </div>
+</div>
+
+<script src="/public/js/post.js"></script>
