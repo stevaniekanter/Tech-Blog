@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comments } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -27,6 +27,19 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup',{
+    loginLink:" active ",
+    titleHead:'Tech Blog'
+  });
+
+});
+
 router.get('/login', async (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -39,37 +52,6 @@ router.get('/login', async (req, res) => {
   });
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-
-  res.render('login');
-});
-
-// GET one post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id);
@@ -78,28 +60,25 @@ router.get('/post/:id', withAuth, async (req, res) => {
     const commentData = await Comment.findAll(
       { where: 
         { user_id: req.session.user_id,post_id:req.params.id } ,
-        include:[
-          {
-            model: User
-          }
-        ]
+        include:[{model: User}]
       }
       );
-    const comments = commentData.map((comments) =>
-      comments.get({ plain: true })
+    const comments = commentData.map((comment) =>
+      comment.get({ plain: true })
     );
     res.render('post', { 
       postInfo, 
       comments,
-      loggedIn: req.session.loggedIn
-    });
+      loggedIn: req.session.loggedIn,
+      homeLink:" active ",
+      titleHead:'Tech Blog' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET new post
+// GET one post
 router.get('/new-post', withAuth, async (req, res) => {
   try {
     
@@ -154,4 +133,5 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 module.exports = router;
