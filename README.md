@@ -2,18 +2,18 @@
 
 # Table of Contents
   * [Description](#description)
-  * [Demonstration](#demonstration)
+  * [Usage](#usage)
   * [Installation](#installation)
   * [Technology](#technology)
   * [Screenshot](#screenshot)
 
 # Description
 
-In this assignment, I have created a CMS-style blog site that user can use to publish blog posts and comments on other post as well. 
+In this assignment, I have created a blog site that user can use to publish blog posts and comments on other post as well. 
 
-# Demonstration
+# Usage
 
-* [Video Walkthrough]()
+* [Deployed URL](https://quiet-stream-81590.herokuapp.com/login)
 
 * [Github Repository](https://github.com/stevaniekanter/Tech-Blog)
 
@@ -33,3 +33,7 @@ mySQL
 Sequelize
 Handlebars
 ```
+
+# Screenshot
+
+
