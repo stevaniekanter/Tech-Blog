@@ -36,4 +36,4 @@ Handlebars
 
 # Screenshot
 
-
+![Tech Blog](assets/tech-blog.png)
