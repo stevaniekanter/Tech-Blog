@@ -9,7 +9,7 @@
   font-family: var(--font-family);
 }
 
-.custom-text-color {
+.text-color {
   color: var(--color)
 }
 
@@ -17,7 +17,7 @@ body {
   background-color: var(--backgorundcolor);
 }
 
-.custom-background-color {
+.background-color {
   color: var(--background);
   background-color: var(--color)
 }
